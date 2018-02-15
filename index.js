@@ -36,7 +36,7 @@ function manifest(options) {
       return;
     }
 
-    contents.push(((options.relativePath|| '').replace(/([^\/])$/, "$1/") || '')+encodeURI(slash(file.relative)));
+    contents.push('/' + ((options.relativePath|| '').replace(/([^\/])$/, "$1/") || '')+encodeURI(slash(file.relative)));
 
     if (options.hash) {
       hasher.update(file.contents, 'binary');
